@@ -1,0 +1,25 @@
+{
+  "name": "Universal Transformer with Depth Embeddings",
+  "author": "",
+  "github_id": "",
+  "track": "non_record_unlimited_compute",
+  "val_bpb": null,
+  "date": "2026-03-28",
+  "compute": "8xH100 SXM, ~4 hours",
+  "architecture": {
+    "type": "universal_transformer",
+    "num_stem": 2,
+    "num_recurrence": 24,
+    "num_tail": 2,
+    "effective_depth": 28,
+    "model_dim": 640,
+    "num_heads": 8,
+    "num_kv_heads": 4,
+    "mlp_mult": 2,
+    "vocab_size": 1024,
+    "tie_embeddings": true,
+    "noisy_qat_shared": true,
+    "depth_embeddings": "learnable, 24x640, init std=0.01"
+  },
+  "notes": "True single-shared-block Universal Transformer with learnable depth embeddings and Noisy QAT on the shared block. Non-record research submission targeting the 4-hour unlimited compute track."
+}
